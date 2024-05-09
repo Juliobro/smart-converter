@@ -6,7 +6,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class HttpRequestHandler {
-    private static final String API_KEY = "f432f95fc3aafca70f6438c9";
+    private static final String API_KEY = System.getenv("API_KEY");
 
     public String extraerJson(String base, String target){
         try {
