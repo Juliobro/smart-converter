@@ -1,4 +1,4 @@
-package com.juliobro.smartconverter.modules;
+package com.juliobro.smartconverter.user_entry_manage;
 
 import java.util.Scanner;
 

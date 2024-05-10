@@ -1,10 +1,11 @@
 package com.juliobro.smartconverter;
 
-import com.juliobro.smartconverter.exceptions.InvalidEntryException;
+import com.juliobro.smartconverter.exceptions.InvalidInputException;
+import com.juliobro.smartconverter.extras.ConsoleProgressBar;
 import com.juliobro.smartconverter.handlers.HttpRequestHandler;
 import com.juliobro.smartconverter.handlers.JsonHandler;
-import com.juliobro.smartconverter.modules.FileGenerator;
-import com.juliobro.smartconverter.modules.UserInput;
+import com.juliobro.smartconverter.user_entry_manage.FileGenerator;
+import com.juliobro.smartconverter.user_entry_manage.UserInput;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -58,10 +59,11 @@ public class Main {
 
                 double valorAConvertir = userInput.valorAConvertir;
                 String valorConvertido = String.format("%.2f", valorAConvertir * tasaDeConversion);
+                ConsoleProgressBar.ProgressBar();
                 archivo.agregarRegistro(valorAConvertir, valorConvertido, monedaBase, monedaTarget);
                 System.out.println();
 
-            } catch (InvalidEntryException e) {
+            } catch (InvalidInputException e) {
                 System.out.println(e.getMessage());
                 continue;
             }

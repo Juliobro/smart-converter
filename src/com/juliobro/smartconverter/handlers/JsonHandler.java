@@ -3,7 +3,7 @@ package com.juliobro.smartconverter.handlers;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.juliobro.smartconverter.exceptions.InvalidEntryException;
+import com.juliobro.smartconverter.exceptions.InvalidInputException;
 
 public class JsonHandler {
     private JsonObject parseJsonObject(String json) {
@@ -16,7 +16,7 @@ public class JsonHandler {
         String resultado = jsonObject.get("result").getAsString();
 
         if (resultado.contains("error")) {
-            throw new InvalidEntryException("Ha ocurrido un error al intentar acceder a " +
+            throw new InvalidInputException("Ha ocurrido un error al intentar acceder a " +
                     "la información de la moneda. Por favor verifica la información ingresada.");
         }
     }

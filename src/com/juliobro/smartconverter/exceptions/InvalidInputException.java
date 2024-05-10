@@ -1,9 +1,9 @@
 package com.juliobro.smartconverter.exceptions;
 
-public class InvalidEntryException extends RuntimeException {
+public class InvalidInputException extends RuntimeException {
     private final String mensaje;
 
-    public InvalidEntryException(String mensaje) {
+    public InvalidInputException(String mensaje) {
         this.mensaje = mensaje;
     }
 
