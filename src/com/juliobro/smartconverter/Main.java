@@ -3,15 +3,18 @@ package com.juliobro.smartconverter;
 import com.juliobro.smartconverter.exceptions.InvalidEntryException;
 import com.juliobro.smartconverter.handlers.HttpRequestHandler;
 import com.juliobro.smartconverter.handlers.JsonHandler;
+import com.juliobro.smartconverter.modules.FileGenerator;
 import com.juliobro.smartconverter.modules.UserInput;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         HttpRequestHandler httpHandler = new HttpRequestHandler();
         JsonHandler jsonHandler = new JsonHandler();
+        FileGenerator archivo = new FileGenerator();
         UserInput userInput = new UserInput();
 
         mensajeBienvenida();
@@ -40,7 +43,7 @@ public class Main {
                 String entrada = sc.nextLine();
 
                 try {
-                    userInput.valorAConvertir = Integer.parseInt(entrada);
+                    userInput.valorAConvertir = Double.parseDouble(entrada);
                     break;
 
                 } catch (NumberFormatException e) {
@@ -55,9 +58,8 @@ public class Main {
 
                 double valorAConvertir = userInput.valorAConvertir;
                 String valorConvertido = String.format("%.2f", valorAConvertir * tasaDeConversion);
-
-                System.out.println("El valor de " + valorAConvertir + " " + monedaBase +
-                        " equivale a " + valorConvertido + " " + monedaTarget);
+                archivo.agregarRegistro(valorAConvertir, valorConvertido, monedaBase, monedaTarget);
+                System.out.println();
 
             } catch (InvalidEntryException e) {
                 System.out.println(e.getMessage());
@@ -77,6 +79,8 @@ public class Main {
                 break;
             }
         }
+        archivo.generarArchivo();
+        System.out.println("Se ha guardado el registro de tus conversiones en 'conversiones.txt'");
         sc.close();
     }
 
