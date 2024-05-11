@@ -61,3 +61,14 @@ de [ExchangeRate-API](https://www.exchangerate-api.com/) y donde dice "Get Free 
 debes escribir tu correo electrónico. A continuación simplemente debes seguir las instrucciones
 propuestas en la página y tendrás tu propia API Key en menos de 2 minutos para probar
 Smart Converter.
+
+---
+## Interfaz principal
+![image](https://github.com/Juliobro/smart-converter/assets/112141655/16061ead-8fd2-4be8-ac85-56f3f5f3e4db)
+
+## Algunas correcciones al usuario
+![image](https://github.com/Juliobro/smart-converter/assets/112141655/75b5a598-00cf-42b3-a652-c817663af777)
+
+## Registros en el archivo .txt
+![image](https://github.com/Juliobro/smart-converter/assets/112141655/c7377b63-9f1e-4512-946e-0ad3923c830b)
+
