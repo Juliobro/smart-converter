@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileGenerator {
-    private final List<String> registros = new ArrayList<>();
+    private final List<String> REGISTROS = new ArrayList<>();
 
     public void agregarRegistro(double valorAConvertir, String valorConvertido, String monedaBase, String monedaTarget) {
         LocalTime hora = LocalTime.now();
@@ -17,13 +17,13 @@ public class FileGenerator {
         System.out.println("El valor de " + valorAConvertir + " " + monedaBase +
                 " equivale a " + valorConvertido + " " + monedaTarget);
 
-        registros.add(hora.format(formatter) + ": Haz convertido " + valorAConvertir + " " + monedaBase +
+        REGISTROS.add(hora.format(formatter) + ": Haz convertido " + valorAConvertir + " " + monedaBase +
                 " a " + valorConvertido + " " +  monedaTarget);
     }
 
     public void generarArchivo() throws IOException {
         try (FileWriter fl = new FileWriter("conversiones.txt")) {
-            for (String registro : registros) {
+            for (String registro : REGISTROS) {
                 fl.write(registro + System.lineSeparator());
             }
         }

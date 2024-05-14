@@ -86,7 +86,7 @@ public class Main {
         sc.close();
     }
 
-    public static void mensajeBienvenida() {
+    private static void mensajeBienvenida() {
         System.out.println("""
                  ******************* ¡Bienvenido a Smart Converter! *******************
                                 \s
@@ -99,7 +99,7 @@ public class Main {
                 \s""");
     }
 
-    public static void menuSeleccion() {
+    private static void menuSeleccion() {
         System.out.println("""
                  1: 'USD' (Dólar)
                  2: 'EUR' (Euro)

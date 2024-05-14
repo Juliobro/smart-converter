@@ -1,14 +1,14 @@
 package com.juliobro.smartconverter.exceptions;
 
 public class InvalidInputException extends RuntimeException {
-    private final String mensaje;
+    private final String MENSAJE;
 
     public InvalidInputException(String mensaje) {
-        this.mensaje = mensaje;
+        this.MENSAJE = mensaje;
     }
 
     @Override
     public String getMessage() {
-        return this.mensaje;
+        return this.MENSAJE;
     }
 }
